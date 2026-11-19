@@ -8,6 +8,17 @@ mission becomes joinable.
 
 Official packages are attached to each [release](https://github.com/pporadzisz/AA25XFCEPanelAplet-releases/releases).
 
+## Tested on
+
+| OS | Version | Package |
+|---|---|---|
+| Xubuntu | 24.04 | `.deb` |
+| Debian Xfce| 13.7 | `.deb` |
+| Linux Mint Xfce| 26.04 | `.deb` |
+
+
+More distributions will be added as they are tested.
+
 ## Installation
 
 Download the package for your distribution from the
@@ -94,6 +105,20 @@ sudo dnf install ./25aapanel-*.rpm
 sudo pacman -U ./25aapanel-*.pkg.tar.zst
 ```
 
+### Reinstalling the same version
+
+If `25aapanel` with the same version is already installed, plain `apt install`
+reports that it is already the newest version and does nothing. Force a
+reinstall with:
+
+```bash
+sudo apt install --reinstall ./25aapanel_1.0_amd64.deb
+```
+
+Use the file name you actually downloaded — the version in the example above is
+just that: an example. A wildcard works as well, e.g.
+`sudo apt install --reinstall ./25aapanel_*_amd64.deb`.
+
 ## After installation
 
 1. Restart the panel: `xfce4-panel -r`
@@ -113,7 +138,7 @@ sudo pacman -U ./25aapanel-*.pkg.tar.zst
 ## Configuration
 
 Right-click the plugin and select **Properties**, or edit
-`~/.config/xfce4/panel/25AApanel/config`:
+`~/.config/25AApanel/config`:
 
 - **refresh_interval** — seconds between data updates (default: 60)
 - **command** — executable run on left-click / Run AA 2.5 (e.g. the
@@ -124,9 +149,42 @@ Right-click the plugin and select **Properties**, or edit
 - **min_players** — minimum players for the notification trigger (default: 3)
 - **mission_name** — mission for the notification trigger, selected from the
   built-in mission list (default: `Pipeline`); matching is case-insensitive
+- **font_color** — text colour for the panel label and tooltip in `#rrggbb`
+  form (default: `#008000`, bottle green, as in previous releases). In
+  Properties, **Use theme text color** is unchecked by default, so the colour
+  picker is active; check it (stored as an empty value) to let GTK use the
+  theme's foreground — helpful when a bright tooltip background makes green hard
+  to read (e.g. Linux Mint).
 
 Each matching mission triggers a notification with a 12-second timeout; the
 check runs on every refresh (no rate limit). Some notification daemons override
 the requested timeout with their own setting.
 
 Changes take effect on the next data update.
+
+## Uninstall
+
+Remove the package with your distribution's package manager:
+
+**Debian / Ubuntu:**
+
+```bash
+sudo apt remove 25aapanel
+```
+
+**Fedora:**
+
+```bash
+sudo dnf remove 25aapanel
+```
+
+**Arch Linux:**
+
+```bash
+sudo pacman -R 25aapanel
+```
+
+The `.deb` package restarts a running panel automatically; otherwise run
+`xfce4-panel -r` yourself. Your settings are kept in
+`~/.config/25AApanel/config` — delete that file too if you want a completely
+clean install (`apt purge` does not remove user configuration).
