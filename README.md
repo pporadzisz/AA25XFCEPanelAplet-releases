@@ -12,10 +12,11 @@ Official packages are attached to each [release](https://github.com/pporadzisz/A
 
 | OS | Version | Package |
 |---|---|---|
-| Xubuntu | 24.04 | `.deb` |
+| Xubuntu | 24.04,26.04 | `.deb` |
 | Debian Xfce| 13.7 | `.deb` |
 | Linux Mint Xfce| 26.04 | `.deb` |
-
+| MX-Linux Xfce | 25.3 | `.deb`|
+| Fedora Xfce | 45 | `rpm`|
 
 More distributions will be added as they are tested.
 
@@ -155,6 +156,10 @@ Right-click the plugin and select **Properties**, or edit
   picker is active; check it (stored as an empty value) to let GTK use the
   theme's foreground — helpful when a bright tooltip background makes green hard
   to read (e.g. Linux Mint).
+- **font_size** — font size in points for the panel label and tooltip (default:
+  `0`, i.e. inherit the theme/panel font size, as before). **Use theme font size**
+  is checked by default in Properties; uncheck it to enable the spin button
+  (6–48 pt).
 
 Each matching mission triggers a notification with a 12-second timeout; the
 check runs on every refresh (no rate limit). Some notification daemons override
@@ -188,3 +193,6 @@ The `.deb` package restarts a running panel automatically; otherwise run
 `xfce4-panel -r` yourself. Your settings are kept in
 `~/.config/25AApanel/config` — delete that file too if you want a completely
 clean install (`apt purge` does not remove user configuration).
+
+[![GitHub all releases](https://shields.io)](https://github.com)
+
