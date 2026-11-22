@@ -1,6 +1,7 @@
 # 25AApanel
 [![GitHub all releases](https://shields.io)](https://github.com)
 
+
 An XFCE4 panel plugin that displays live game-server statistics:
 **Online | In-Game | Servers**. Data comes from a UDP server query and a
 server list URL. Hover for a tooltip with server details, left-click to run
