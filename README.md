@@ -1,5 +1,5 @@
 # 25AApanel
-[![GitHub all releases](https://shields.io)](https://github.com)
+[![GitHub all releases](https://img.shields.io/github/downloads/pporadzisz/AA25XFCEPanelAplet-releases/total)](https://github.com/pporadzisz/AA25XFCEPanelAplet-releases/releases)
 
 
 An XFCE4 panel plugin that displays live game-server statistics:
