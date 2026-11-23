@@ -18,7 +18,7 @@ Official packages are attached to each [release](https://github.com/pporadzisz/A
 | Debian Xfce| 13.7 | `.deb` |
 | Linux Mint Xfce| 26.04 | `.deb` |
 | MX-Linux Xfce | 25.3 | `.deb`|
-| Fedora Xfce | 45 | `rpm`|
+| Fedora Xfce | 45 | `.rpm`|
 | Manjaro Xfce | 26.1 | `.zst`|
 
 More distributions will be added as they are tested.
